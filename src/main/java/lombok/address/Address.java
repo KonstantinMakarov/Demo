@@ -6,8 +6,8 @@ public class Address {
     private String street;
     private int houseNumber;
 
-    public Address(String someStreet, int houseNumber) {
-        this.street = someStreet;
+    public Address(String street, int houseNumber) {
+        this.street = street;
         this.houseNumber = houseNumber;
     }
 

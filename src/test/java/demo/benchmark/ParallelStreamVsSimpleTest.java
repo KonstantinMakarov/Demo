@@ -21,7 +21,7 @@ public class ParallelStreamVsSimpleTest {
 
     private List<String> sortDistinct(int limit) {
         for (int i=0; i<limit; i++){
-            persons.add(i + "Bob" + i);
+            persons.add(i + "Alice" + i);
         }
         return persons.stream().sorted().distinct().collect(Collectors.toList());
     }
