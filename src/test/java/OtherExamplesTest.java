@@ -1,5 +1,9 @@
-import lombok.Person;
-import lombok.address.Address;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import lombokentity.Person;
+import lombokentity.School;
+import lombokentity.address.Address;
+import org.assertj.core.api.Assertions;
 import org.openqa.selenium.support.ui.Quotes;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
@@ -7,6 +11,7 @@ import org.testng.annotations.Test;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -54,4 +59,21 @@ public class OtherExamplesTest {
             System.out.println(result);
     }
 
+    @Test
+    void testAssertionsFormat() {
+        Assertions.assertThat("true").as("error").isEqualTo("not true");
+    }
+
+    @Test
+    void testJsonParser() throws IOException {
+        String str = "{ \t\"name\": \"Gymnasium\", \t\"id\": \"7\", \t\"pupils\": [{\t\"name\": \"Bob\" \t},{\t\"name\": \"Alice\" \t}] }";
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+        School.Pupil pupil = objectMapper.readValue(str, School.Pupil.class);
+    }
+
+    @Test
+    public void testTmp() {
+
+    }
 }

@@ -1,4 +1,4 @@
-package lombok.address;
+package lombokentity.address;
 
 //@Data
 public class Address {

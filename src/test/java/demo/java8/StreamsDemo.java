@@ -1,7 +1,7 @@
 package demo.java8;
 
-import lombok.Person;
-import lombok.address.Address;
+import lombokentity.Person;
+import lombokentity.address.Address;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;

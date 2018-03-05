@@ -3,8 +3,8 @@ package demo.java8;
 import com.google.common.util.concurrent.Uninterruptibles;
 import functional.interfaces.TriFunction;
 import functional.interfaces.supplier.HttpUtils;
-import lombok.Person;
-import lombok.address.Address;
+import lombokentity.Person;
+import lombokentity.address.Address;
 import org.apache.commons.lang3.StringUtils;
 import org.testng.annotations.Test;
 

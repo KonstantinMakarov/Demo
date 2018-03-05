@@ -1,6 +1,6 @@
-package lombok;
+package lombokentity;
 
-import lombok.address.Address;
+import lombokentity.address.Address;
 
 //@Data
 public class Person {
