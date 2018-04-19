@@ -10,7 +10,7 @@ import java.io.InputStream;
 public class TryWithResourcesTest {
 
     @Test
-    void tryWithResourcesJava8Demo() throws IOException {
+    public void tryWithResourcesJava8Demo() throws IOException {
         InputStream inputStream = new FileInputStream(new File(""));
         try (InputStream inputStreamCopy = inputStream) {
             int available = inputStreamCopy.available();
@@ -19,7 +19,7 @@ public class TryWithResourcesTest {
     }
 
     @Test
-    void tryWithResourcesJava9Demo() throws IOException {
+    public void tryWithResourcesJava9Demo() throws IOException {
         InputStream inputStream = new FileInputStream(new File("c:\\Users\\Kanstantsin_Makarau\\soapui-settings.xml"));
         try (inputStream) {
             int available = inputStream.available();

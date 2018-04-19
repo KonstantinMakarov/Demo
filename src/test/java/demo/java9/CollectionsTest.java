@@ -17,7 +17,6 @@ public class CollectionsTest {
         set.add("First");
     }
 
-    @Deprecated(since = "1.8", forRemoval = true)
     @Test
     public void collectionsDemo() {
         Set<String> set = Set.of("Minsk", "Vitebsk");

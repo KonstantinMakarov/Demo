@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 public class FunctionalInterfaceTest {
 
     @Test
-    void compareToDemo() {
+    public void compareToDemo() {
         List<Person> persons = new ArrayList<>();
         persons.add(new Person("Bob", new Address("Bob Street", 10)));
         persons.add(new Person("Alice", new Address("Alice avenue", 183)));
@@ -31,7 +31,7 @@ public class FunctionalInterfaceTest {
     }
 
     @Test
-    void functionDemo() {
+    public void functionDemo() {
         //waitWlukRootTopicsPopulated() - example of Function (waitFor)
         int sum = performInversion(6, 8, 10, (x, y, z) -> x + y + z);
         int mult = performInversion(3, 4, 5, (x, y, z) -> x * y * z);
@@ -45,7 +45,7 @@ public class FunctionalInterfaceTest {
     }
 
     @Test
-    void supplierFunctionalInterfaceDemo() {
+    public void supplierFunctionalInterfaceDemo() {
         System.out.println(getDataFromServerWithDelay(0, () -> HttpUtils.sendRequestAndGetTime()));
         System.out.println(getDataFromServerWithDelay(5, () -> HttpUtils.sendRequestAndGetDate()));
 
@@ -59,7 +59,7 @@ public class FunctionalInterfaceTest {
     }
 
     @Test
-    void consumerFunctionalInterfaceDemo() {
+    public void consumerFunctionalInterfaceDemo() {
         Map<String, String> ages = new HashMap<>();
         ages.put("John25", "25");
         ages.put("Freddy24", "24");
@@ -69,7 +69,7 @@ public class FunctionalInterfaceTest {
     }
 
     @Test
-    void predicateFunctionalInterfaceDemo() {
+    public void predicateFunctionalInterfaceDemo() {
         List<Person> persons = new ArrayList<>();
         persons.add(new Person("Bob", new Address("Bob Street", 10)));
         persons.add(new Person("Alice", new Address("Alice avenue", 183)));

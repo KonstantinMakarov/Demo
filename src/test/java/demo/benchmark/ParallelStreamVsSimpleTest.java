@@ -54,7 +54,7 @@ public class ParallelStreamVsSimpleTest {
     }
 
     @Test
-    void parallelStreamVsSimpleDemo() throws RunnerException {
+    public void parallelStreamVsSimpleDemo() throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(ParallelStreamVsSimpleTest.class.getSimpleName())
                 .warmupIterations(10)

@@ -9,7 +9,7 @@ public class DateAndTimeTest {
 
     //PollsTest.java could be used as PL+ example
     @Test
-    void javaTimeDemo() {
+    public void javaTimeDemo() {
         LocalDate today = LocalDate.now();
 
         System.out.println("Is " + today.getYear() + " - leap? : " + today.isLeapYear());
@@ -36,7 +36,7 @@ public class DateAndTimeTest {
     }
 
     @Test
-    void timeZoneDemo() {
+    public void timeZoneDemo() {
         ZoneId timeZone=ZoneId.of("America/New_York");
         ZonedDateTime todayWithTimeZone=ZonedDateTime.of(LocalDateTime.now(), timeZone);
         System.out.format("Date time with zone ID of New York is %s\n", todayWithTimeZone);

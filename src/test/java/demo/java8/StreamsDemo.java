@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 public class StreamsDemo {
 
     @Test
-    void showStreamsVsVanillaDemo() {
+    public void showStreamsVsVanillaDemo() {
         List<Person> persons = new ArrayList<>();
         persons.add(new Person("Bob", new Address("Bob Street", 10)));
         persons.add(new Person("Alice", new Address("Alice avenue", 183)));
@@ -57,7 +57,7 @@ public class StreamsDemo {
 
 
     @Test
-    void sumVsReduceDemo() {
+    public void sumVsReduceDemo() {
         int reduce = Stream.of(1, 2, 3, 4, 2).filter(o -> o % 2 != 0).reduce(Integer::sum).orElse(0);
         int sum = Stream.of(1, 2, 3, 4, 2).filter(o -> o % 2 != 0).mapToInt(s -> s).sum();
         System.out.println(reduce + " " + sum);

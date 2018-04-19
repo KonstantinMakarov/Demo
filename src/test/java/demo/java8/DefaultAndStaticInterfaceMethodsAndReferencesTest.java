@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 public class DefaultAndStaticInterfaceMethodsAndReferencesTest {
 
     @Test
-    void defaultAndStaticMethodsDemo() {
+    public void defaultAndStaticMethodsDemo() {
         MultipleInheritance demo = new MultipleInheritance();
         demo.multipleInheritanceSimpleMethod();
         demo.commonDefaultMethod();
@@ -24,7 +24,7 @@ public class DefaultAndStaticInterfaceMethodsAndReferencesTest {
     }
 
     @Test
-    void methodReferencesDemo() {
+    public void methodReferencesDemo() {
         List<String> list = Stream.of("K", "g", "B").map(String::valueOf).collect(Collectors.toList());
         System.out.println(list);
     }
