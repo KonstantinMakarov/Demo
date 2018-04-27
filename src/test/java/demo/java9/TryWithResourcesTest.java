@@ -11,8 +11,15 @@ public class TryWithResourcesTest {
 
     @Test
     public void tryWithResourcesJava8Demo() throws IOException {
-        InputStream inputStream = new FileInputStream(new File(""));
-        try (InputStream inputStreamCopy = inputStream) {
+        try (InputStream inputStreamCopy = new FileInputStream(new File("c:\\Users\\Kanstantsin_Makarau\\soapui-settings.xml"))) {
+            int available = inputStreamCopy.available();
+            System.out.println(available);
+        }
+        try (InputStream inputStreamCopy = new FileInputStream(new File("c:\\Users\\Kanstantsin_Makarau\\soapui-settings.xml"))) {
+            int available = inputStreamCopy.available();
+            System.out.println(available);
+        }
+        try (InputStream inputStreamCopy = new FileInputStream(new File("c:\\Users\\Kanstantsin_Makarau\\soapui-settings.xml"))) {
             int available = inputStreamCopy.available();
             System.out.println(available);
         }
@@ -21,6 +28,14 @@ public class TryWithResourcesTest {
     @Test
     public void tryWithResourcesJava9Demo() throws IOException {
         InputStream inputStream = new FileInputStream(new File("c:\\Users\\Kanstantsin_Makarau\\soapui-settings.xml"));
+        try (inputStream) {
+            int available = inputStream.available();
+            System.out.println(available);
+        }
+        try (inputStream) {
+            int available = inputStream.available();
+            System.out.println(available);
+        }
         try (inputStream) {
             int available = inputStream.available();
             System.out.println(available);

@@ -4,15 +4,21 @@ import org.testng.annotations.Test;
 
 public class DeprecatedTest {
 
-    @SuppressWarnings(value = {"deprecation", "removal"})
     @Test
     public void deprecatedMethodDemo() {
-        System.out.println(goodMethod());
         System.out.println(java8DeprecatedMethod());
         System.out.println(java9deprecatedMethod());
         System.out.println(java9deprecatedMethodForRemoval());
+        System.out.println(goodMethod());
     }
 
+    /**
+     * Java 8 Deprecated Method
+     *
+     * @deprecated because of new java.
+     *    Since 1.19 framework version
+     *    Replaced by {@link #goodMethod()}
+     */
     @Deprecated
     private String java8DeprecatedMethod() {
         return "Old Deprecated";
@@ -23,7 +29,7 @@ public class DeprecatedTest {
         return "Deprecated";
     }
 
-    @Deprecated(since = "1.19", forRemoval = true)
+    @Deprecated(forRemoval = true, since = "1.19")
     private String java9deprecatedMethodForRemoval() {
         return "Deprecated, forRemoval";
     }

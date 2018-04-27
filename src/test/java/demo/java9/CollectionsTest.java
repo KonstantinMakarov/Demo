@@ -14,11 +14,13 @@ public class CollectionsTest {
         Set<String> set = new HashSet<>();
         set.add("First");
         set.add("Second");
-        set.add("First");
+        set = Collections.unmodifiableSet(set);
+        System.out.println(set);
     }
 
     @Test
     public void collectionsDemo() {
+        List<String> list = List.of("Minsk", "Vitebsk", "Minsk");
         Set<String> set = Set.of("Minsk", "Vitebsk");
         Map<Integer, String> cities = Map.of(1,"Minsk", 2, "Vitebsk");
         Map<Integer, String> citiesEntries = Map.ofEntries(entry(1,"Minsk"), entry(2, "Vitebsk"));
