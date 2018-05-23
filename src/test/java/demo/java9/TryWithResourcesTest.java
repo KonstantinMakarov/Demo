@@ -27,18 +27,18 @@ public class TryWithResourcesTest {
 
     @Test
     public void tryWithResourcesJava9Demo() throws IOException {
-        InputStream inputStream = new FileInputStream(new File("c:\\Users\\Kanstantsin_Makarau\\soapui-settings.xml"));
-        try (inputStream) {
-            int available = inputStream.available();
-            System.out.println(available);
-        }
-        try (inputStream) {
-            int available = inputStream.available();
-            System.out.println(available);
-        }
-        try (inputStream) {
-            int available = inputStream.available();
-            System.out.println(available);
-        }
+//        InputStream inputStream = new FileInputStream(new File("c:\\Users\\Kanstantsin_Makarau\\soapui-settings.xml"));
+//        try (inputStream) {
+//            int available = inputStream.available();
+//            System.out.println(available);
+//        }
+//        try (inputStream) {
+//            int available = inputStream.available();
+//            System.out.println(available);
+//        }
+//        try (inputStream) {
+//            int available = inputStream.available();
+//            System.out.println(available);
+//        }
     }
 }
