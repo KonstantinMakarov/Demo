@@ -4,7 +4,6 @@ import org.testng.annotations.Test;
 
 import java.util.*;
 
-import static java.util.Map.entry;
 
 public class CollectionsTest {
 
@@ -20,9 +19,9 @@ public class CollectionsTest {
 
     @Test
     public void collectionsDemo() {
-        List<String> list = List.of("Minsk", "Vitebsk", "Minsk");
-        Set<String> set = Set.of("Minsk", "Vitebsk");
-        Map<Integer, String> cities = Map.of(1,"Minsk", 2, "Vitebsk");
-        Map<Integer, String> citiesEntries = Map.ofEntries(entry(1,"Minsk"), entry(2, "Vitebsk"));
+//        List<String> list = List.of("Minsk", "Vitebsk", "Minsk");
+//        Set<String> set = Set.of("Minsk", "Vitebsk");
+//        Map<Integer, String> cities = Map.of(1,"Minsk", 2, "Vitebsk");
+//        Map<Integer, String> citiesEntries = Map.ofEntries(entry(1,"Minsk"), entry(2, "Vitebsk"));
     }
 }

@@ -7,8 +7,8 @@ public class DeprecatedTest {
     @Test
     public void deprecatedMethodDemo() {
         System.out.println(java8DeprecatedMethod());
-        System.out.println(java9deprecatedMethod());
-        System.out.println(java9deprecatedMethodForRemoval());
+//        System.out.println(java9deprecatedMethod());
+//        System.out.println(java9deprecatedMethodForRemoval());
         System.out.println(goodMethod());
     }
 
@@ -24,15 +24,15 @@ public class DeprecatedTest {
         return "Old Deprecated";
     }
 
-    @Deprecated(since = "1.19")
-    private String java9deprecatedMethod() {
-        return "Deprecated";
-    }
-
-    @Deprecated(forRemoval = true, since = "1.19")
-    private String java9deprecatedMethodForRemoval() {
-        return "Deprecated, forRemoval";
-    }
+//    @Deprecated(since = "1.19")
+//    private String java9deprecatedMethod() {
+//        return "Deprecated";
+//    }
+//
+//    @Deprecated(forRemoval = true, since = "1.19")
+//    private String java9deprecatedMethodForRemoval() {
+//        return "Deprecated, forRemoval";
+//    }
 
     private String goodMethod() {
         return "Good";
