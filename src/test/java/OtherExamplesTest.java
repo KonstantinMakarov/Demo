@@ -7,6 +7,7 @@ import org.assertj.core.api.Assertions;
 import org.openqa.selenium.support.ui.Quotes;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 import org.testng.annotations.Test;
 
 import java.awt.*;
@@ -15,6 +16,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
 
 public class OtherExamplesTest {
 
@@ -70,6 +72,15 @@ public class OtherExamplesTest {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
         School.Pupil pupil = objectMapper.readValue(str, School.Pupil.class);
+    }
+
+    @Test
+    public void testUrlParameter() {
+        String url = "https://uk.practicallaw.qed.thomsonreuters.com/Document/I53924361d8e611e698dc8b09b4f043e0/View/FullText.html?view=hidealldraftingnotes&transitionType=Default";
+        String a = UriComponentsBuilder.fromHttpUrl(url)
+                .replaceQueryParam("view", "urlViewParameter")
+                .build().toString();
+        System.out.println(a);
     }
 
     @Test
