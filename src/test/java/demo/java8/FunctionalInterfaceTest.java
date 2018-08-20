@@ -32,12 +32,12 @@ public class FunctionalInterfaceTest {
 
     @Test
     public void functionDemo() {
-        //waitWlukRootTopicsPopulated() - example of Function (waitFor)
+        //waitWlukRootTopicsPopulated() - Example of Function (waitFor)
         int sum = performInversion(6, 8, 10, (x, y, z) -> x + y + z);
         int mult = performInversion(3, 4, 5, (x, y, z) -> x * y * z);
         System.out.println(sum + "; " + mult);
 
-        //Alex should send her example of custom function
+        //Alex should send her Example of custom function
     }
 
     private int performInversion(int x, int y, int z, TriFunction<Integer, Integer, Integer, Integer> function) {
@@ -49,7 +49,7 @@ public class FunctionalInterfaceTest {
         System.out.println(getDataFromServerWithDelay(0, () -> HttpUtils.sendRequestAndGetTime()));
         System.out.println(getDataFromServerWithDelay(5, () -> HttpUtils.sendRequestAndGetDate()));
 
-        //performActionsInIFrame() could also be considered as example
+        //performActionsInIFrame() could also be considered as Example
     }
 
     private String getDataFromServerWithDelay(int waitBeforeStart, Supplier<String> supplier) {

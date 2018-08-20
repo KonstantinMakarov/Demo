@@ -7,7 +7,7 @@ import java.time.temporal.TemporalAdjusters;
 
 public class DateAndTimeTest {
 
-    //PollsTest.java could be used as PL+ example
+    //PollsTest.java could be used as PL+ Example
     @Test
     public void javaTimeDemo() {
         LocalDate today = LocalDate.now();

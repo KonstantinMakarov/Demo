@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import java.awt.*;
 import java.awt.event.InputEvent;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -85,6 +86,25 @@ public class OtherExamplesTest {
 
     @Test
     public void testTmp() {
+        List<Link> links = Arrays.asList(new Link("firstT", "firstH"), new Link("secondT", "SecondH"));
+        Assertions.assertThat(links).as("size issue").hasSize(1).extracting("title").as("titleH").allMatch(title -> title.toString().endsWith("H"));
+    }
 
+    class Link {
+        String title;
+        String href;
+
+        Link(String title, String href) {
+            this.title = title;
+            this.href = href;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public String getHref() {
+            return href;
+        }
     }
 }
