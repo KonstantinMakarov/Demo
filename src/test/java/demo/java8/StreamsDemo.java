@@ -11,6 +11,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static java.util.Arrays.asList;
+import static java.util.stream.Collectors.groupingBy;
+
 public class StreamsDemo {
 
     @Test
@@ -61,5 +64,12 @@ public class StreamsDemo {
         int reduce = Stream.of(1, 2, 3, 4, 2).filter(o -> o % 2 != 0).reduce(Integer::sum).orElse(0);
         int sum = Stream.of(1, 2, 3, 4, 2).filter(o -> o % 2 != 0).mapToInt(s -> s).sum();
         System.out.println(reduce + " " + sum);
+    }
+
+    @Test
+    public void groupingDemo() {
+        List<String> list = asList("text/31/1/2", "text/31/3/3", "text/31/5/1");
+
+        System.out.println(list.stream().collect(groupingBy(string -> string.split("/")[2])));
     }
 }

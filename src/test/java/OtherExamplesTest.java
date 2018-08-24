@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 import org.testng.annotations.Test;
+import other.Link;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
@@ -17,6 +18,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static java.util.Arrays.asList;
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.toList;
 
 
 public class OtherExamplesTest {
@@ -58,7 +63,7 @@ public class OtherExamplesTest {
                     .peek(System.out::println)
                     .map(String::toLowerCase)
                     .peek(System.out::println)
-                    .collect(Collectors.toList());
+                    .collect(toList());
             System.out.println(result);
     }
 
@@ -85,26 +90,13 @@ public class OtherExamplesTest {
     }
 
     @Test
-    public void testTmp() {
-        List<Link> links = Arrays.asList(new Link("firstT", "firstH"), new Link("secondT", "SecondH"));
+    public void testExtracting() {
+        List<Link> links = asList(new Link("firstT", "firstH"), new Link("secondT", "SecondH"));
         Assertions.assertThat(links).as("size issue").hasSize(1).extracting("title").as("titleH").allMatch(title -> title.toString().endsWith("H"));
     }
 
-    class Link {
-        String title;
-        String href;
+    @Test
+    public void tmp() {
 
-        Link(String title, String href) {
-            this.title = title;
-            this.href = href;
-        }
-
-        public String getTitle() {
-            return title;
-        }
-
-        public String getHref() {
-            return href;
-        }
     }
 }
