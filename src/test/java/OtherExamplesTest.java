@@ -4,6 +4,9 @@ import lombokentity.Person;
 import lombokentity.School;
 import lombokentity.address.Address;
 import org.assertj.core.api.Assertions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Quotes;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
@@ -78,6 +81,18 @@ public class OtherExamplesTest {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
         School.Pupil pupil = objectMapper.readValue(str, School.Pupil.class);
+    }
+
+    @Test
+    public void testSelenium() {
+        System.setProperty("webdriver.gecko.driver", OtherExamplesTest.class.getResource("geckodriver.exe").getPath());
+        WebDriver driver = new FirefoxDriver();
+        driver.get("http://zelotos.ru/");
+
+        boolean present = driver.findElements(By.xpath("//a[@title='Золотой Лотос']")).size() > 0;
+        System.out.println(present);
+
+        driver.close();
     }
 
     @Test
