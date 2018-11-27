@@ -1,5 +1,6 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.google.common.base.CharMatcher;
 import lombokentity.Person;
 import lombokentity.School;
 import lombokentity.address.Address;
@@ -8,17 +9,30 @@ import org.openqa.selenium.support.ui.Quotes;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import other.Link;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.Temporal;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static com.google.common.base.CharMatcher.*;
 import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;
@@ -93,6 +107,16 @@ public class OtherExamplesTest {
     public void testExtracting() {
         List<Link> links = asList(new Link("firstT", "firstH"), new Link("secondT", "SecondH"));
         Assertions.assertThat(links).as("size issue").hasSize(1).extracting("title").as("titleH").allMatch(title -> title.toString().endsWith("H"));
+    }
+
+    @Test
+    public void testCharMatcher() {
+        System.out.println(digit().retainFrom("1 122,5.3"));
+    }
+
+    @Test
+    public void testRegexMatcher() {
+        Assertions.assertThat("03:50").containsPattern("^[0-2]\\d:[0-5]\\d$");
     }
 
     @Test
