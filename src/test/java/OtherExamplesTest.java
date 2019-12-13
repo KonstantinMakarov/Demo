@@ -28,25 +28,25 @@ import static java.util.stream.Collectors.toList;
 public class OtherExamplesTest {
 
     void robot() throws AWTException {
-            Robot robot = new Robot();
-            robot.delay(3000);
-            while (true) {
-                robot.mousePress(InputEvent.BUTTON1_MASK);
-                robot.delay(1000);
-                robot.mouseRelease(InputEvent.BUTTON1_MASK);
-            }
+        Robot robot = new Robot();
+        robot.delay(3000);
+        while (true) {
+            robot.mousePress(InputEvent.BUTTON1_MASK);
+            robot.delay(1000);
+            robot.mouseRelease(InputEvent.BUTTON1_MASK);
+        }
     }
 
     public void restGet() {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> response = restTemplate.getForEntity("http://us.p02edi.practicallaw.com/cs/Satellite/" +
-                        "?pagename=XMLWrapper&childpagename=PLC/PLC_Doc_C/XmlDataViewExt&plcref=9-376-4010", String.class);
+                "?pagename=XMLWrapper&childpagename=PLC/PLC_Doc_C/XmlDataViewExt&plcref=9-376-4010", String.class);
         System.out.println(response.getBody());
     }
 
     @Test
     public void quotesEscape() {
-        String a = "//a[@id=" + Quotes.escape("Ivan ' friend") + "]";
+        String a = "//a[@id=" + Quotes.escape("Ivan \" \' friend") + "]";
         System.out.println(a);
     }
 
@@ -59,13 +59,13 @@ public class OtherExamplesTest {
 
     @Test
     void peekStream() {
-            List<String> result = Stream.of("EURO/INR", "USD/AUD", "USD/GBP", "USD/EURO")
-                    .filter(e -> e.length() > 7)
-                    .peek(System.out::println)
-                    .map(String::toLowerCase)
-                    .peek(System.out::println)
-                    .collect(toList());
-            System.out.println(result);
+        List<String> result = Stream.of("EURO/INR", "USD/AUD", "USD/GBP", "USD/EURO")
+                .filter(e -> e.length() > 7)
+                .peek(System.out::println)
+                .map(String::toLowerCase)
+                .peek(System.out::println)
+                .collect(toList());
+        System.out.println(result);
     }
 
     @Test
@@ -79,6 +79,7 @@ public class OtherExamplesTest {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
         School.Pupil pupil = objectMapper.readValue(str, School.Pupil.class);
+        System.out.println(pupil.name);
     }
 
     @Test

@@ -31,7 +31,6 @@
             <version>1.16.20.0</version>
             <type>pom</type>
         </dependency>
-
         <dependency>
             <groupId>com.javaslang</groupId>
             <artifactId>javaslang</artifactId>
@@ -40,7 +39,12 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.3.2</version>
+            <version>3.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.0</version>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
